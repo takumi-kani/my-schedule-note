@@ -1,26 +1,17 @@
-<h2>Log in</h2>
+<h2>管理者ログイン</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+<%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
+  <%= render "shared/error_messages", model: f.object %>
+
+    <%= f.label :name, "名前" %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %><br />
+
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %><br />
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <%= f.label :password, "パスワード（6文字以上）" %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %><br /><br />
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+    <%= f.submit "ログインする" %>
+    <p><%= link_to "戻る", root_path %></p>
 <% end %>
-
-<%= render "admins/shared/links" %>
