@@ -13,6 +13,26 @@
 <h3>内容</h3>
 <%= @schedule.info %>
 
+<h3>コメント欄</h3>
+<ul>
+  <% @comments.each do |comment| %>
+  <li>
+    <%= comment.text %>
+    <% if comment.admin_id == nil %>
+      <%= comment.user.name %><%= comment.created_at.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[comment.created_at.wday]}) %H:%M") %>
+    <% else %>
+      <%= comment.admin.name %><%= comment.created_at.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[comment.created_at.wday]}) %H:%M") %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+<%= form_with model: [@schedule, @comment], local: true do |f|%>
+<%= render 'shared/error_messages', model: f.object %>
+  <%= f.text_field :text %>
+  <%= f.submit "送信する" %>
+<% end %>
+
 <% if user_signed_in? %>
   <% if current_user.id == @schedule.user_id %>
     <p><%= link_to "予定の変更", edit_schedule_path(@schedule), method: :get %></p>
