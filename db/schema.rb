@@ -54,4 +54,5 @@ ActiveRecord::Schema.define(version: 2021_09_30_034030) do
 
   add_foreign_key "schedules", "admins"
   add_foreign_key "schedules", "users"
+
 end
