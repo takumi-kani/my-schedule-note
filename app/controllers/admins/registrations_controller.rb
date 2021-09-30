@@ -2,6 +2,10 @@
 
 class Admins::RegistrationsController < Devise::RegistrationsController
   before_action :basic_auth
+<<<<<<< Updated upstream
+=======
+  before_action :configure_permitted_parameters, if: :devise_controller?
+>>>>>>> Stashed changes
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -66,4 +70,11 @@ class Admins::RegistrationsController < Devise::RegistrationsController
       id == 'test' && password =='1111'
     end
   end
+<<<<<<< Updated upstream
+=======
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
+>>>>>>> Stashed changes
 end
