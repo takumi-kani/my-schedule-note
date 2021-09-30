@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'schedules#index'
+
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -10,4 +12,5 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   
+  resources :schedules
 end
