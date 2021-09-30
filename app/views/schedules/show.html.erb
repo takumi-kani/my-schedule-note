@@ -16,10 +16,12 @@
 <% if user_signed_in? %>
   <% if current_user.id == @schedule.user_id %>
     <p><%= link_to "予定の変更", edit_schedule_path(@schedule), method: :get %></p>
+    <p><%= link_to "予定を削除する", schedule_path(@schedule), method: :delete %></p>
   <% end %>
 <% else %>
   <% if current_admin.id == @schedule.admin_id %>
     <p><%= link_to "予定の変更", edit_schedule_path(@schedule), method: :get %></p>
+    <p><%= link_to "予定を削除する", schedule_path(@schedule), method: :delete %></p>
   <% end %>
 <% end %>
 
