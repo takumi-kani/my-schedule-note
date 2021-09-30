@@ -10,5 +10,4 @@ class Admin < ApplicationRecord
   end
 
   has_many :schedules
->>>>>>> Stashed changes
 end
