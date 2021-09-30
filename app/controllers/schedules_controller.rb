@@ -14,7 +14,11 @@ class SchedulesController < ApplicationController
     else
       render new_schedule_path
     end
-  end 
+  end
+
+  def show
+    @schedule = Schedule.find(params[:id])
+  end
 
   private
 
