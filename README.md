@@ -1,5 +1,5 @@
 # アプリケーション名
-> MyScheduleTable
+> MyScheduleNote
 
 # 概要
 > 大人対子供の間で、連絡帳や交換ノートのような感覚で利用できるように、コミュニケーションを取る目的で作成
@@ -56,6 +56,7 @@
 | Column             | Type    | Options     |
 | ------------------ | ------- | ----------- |
 | name               | string  | null: false |
+| email              | string  | null: false |
 | encrypted_password | string  | null: false |
 
 ### Association
@@ -64,11 +65,12 @@
 - has_many :comments
 
 
-## admin_users テーブル
+## admins テーブル
 
 | Column             | Type    | Options     |
 | ------------------ | ------- | ----------- |
 | name               | string  | null: false |
+| email              | string  | null: false |
 | encrypted_password | string  | null: false |
 
 ### Association
@@ -87,26 +89,26 @@
 | place      | string     | null: false       |
 | info       | text       | null: false       |
 | user       | references | foreign_key: true |
-| admin_user | references | foreign_key: true |
+| admin      | references | foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :admin_user
+- belongs_to :admin
 - has_one :comments
 
 
 ## comments テーブル
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| text       | text       | null: false                    |
-| user       | references | foreign_key: true              |
-| admin_user | references | foreign_key: true              |
-| schedule   | references | null: false, foreign_key: true |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| text     | text       | null: false                    |
+| user     | references | foreign_key: true              |
+| admin    | references | foreign_key: true              |
+| schedule | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :admin_user
+- belongs_to :admin
 - belongs_to :schedule
