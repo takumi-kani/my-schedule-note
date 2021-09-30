@@ -13,4 +13,14 @@
 <h3>内容</h3>
 <%= @schedule.info %>
 
+<% if user_signed_in? %>
+  <% if current_user.id == @schedule.user_id %>
+    <p><%= link_to "予定の変更", edit_schedule_path(@schedule), method: :get %></p>
+  <% end %>
+<% else %>
+  <% if current_admin.id == @schedule.admin_id %>
+    <p><%= link_to "予定の変更", edit_schedule_path(@schedule), method: :get %></p>
+  <% end %>
+<% end %>
+
 <p><%= link_to "カレンダーに戻る", root_path %></p>
