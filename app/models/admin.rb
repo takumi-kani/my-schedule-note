@@ -10,4 +10,5 @@ class Admin < ApplicationRecord
   end
 
   has_many :schedules
+  has_many :comments
 end

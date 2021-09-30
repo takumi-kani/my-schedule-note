@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   
-  resources :schedules
+  resources :schedules do
+    resources :comments, only: :create
+  end
 end

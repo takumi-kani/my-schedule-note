@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_30_034030) do
+ActiveRecord::Schema.define(version: 2021_09_30_061406) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -23,6 +23,18 @@ ActiveRecord::Schema.define(version: 2021_09_30_034030) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "user_id"
+    t.bigint "admin_id"
+    t.bigint "schedule_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_id"], name: "index_comments_on_admin_id"
+    t.index ["schedule_id"], name: "index_comments_on_schedule_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -52,7 +64,9 @@ ActiveRecord::Schema.define(version: 2021_09_30_034030) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "admins"
+  add_foreign_key "comments", "schedules"
+  add_foreign_key "comments", "users"
   add_foreign_key "schedules", "admins"
   add_foreign_key "schedules", "users"
-
 end
