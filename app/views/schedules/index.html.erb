@@ -1,0 +1,30 @@
+<% if user_signed_in? %>
+  <h1><%= "#{current_user.name}のカレンダー" %></h1>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <%= link_to "新しい予定を作成", new_schedule_path %>
+
+  <%= month_calendar events: @schedules do |date, schedules| %>
+    <%= date.day %><br>
+    <% schedules.each do |schedule| %>
+      <% if current_user.id == schedule.user_id || schedule.user_id == nil %>
+        <li><%= link_to schedule.title, schedule_path(schedule.id) %></li>
+      <% end %>
+    <% end %>
+  <% end %>
+<% elsif admin_signed_in? %>
+  <h1><%= "#{current_admin.name}のカレンダー" %></h1>
+  <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
+  <%= link_to "新しい予定を予定", new_schedule_path %>
+
+  <%= month_calendar events: @schedules do |date, schedules| %>
+    <%= date.day %><br>
+    <% schedules.each do |schedule| %>
+      <li><%= link_to schedule.title, schedule_path(schedule.id) %></li>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to "新規ユーザー登録", new_user_registration_path %>
+  <%= link_to "ユーザー用ログイン", new_user_session_path %><br />
+  <%= link_to "新規管理者登録", new_admin_registration_path %>
+  <%= link_to "管理者用ログイン", new_admin_session_path %>
+<% end %>
