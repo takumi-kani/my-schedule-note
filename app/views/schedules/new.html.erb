@@ -1,0 +1,21 @@
+<%= form_with model: @schedule, url: schedules_path, local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+
+  タイトル
+  <%= f.text_area :title, placeholder:"例 サッカー、スイミングなど", maxlength:"20" %>
+
+  <p>開始日
+  <%= f.datetime_select(:start_time, use_month_numbers: true, discard_year: true, selected: Date.today.year, prompt:'--', datetime_separator: '開始時間')%></p>
+
+  <p>終了日
+  <%= f.datetime_select(:end_time, use_month_numbers: true, discard_year: true, selected: Date.today.year, prompt:'--', datetime_separator: '終了時間')%></p>
+  
+  <p>場所
+  <%= f.text_area :place, placeholder:"例 ○○小学校、××グラウンドなど", maxlength:"20" %></p>
+
+  <p>活動内容
+  <%= f.text_area :info, placeholder:"詳細を記入" %></p>
+
+  <%= f.submit "予定を登録する" %>
+  <p><%= link_to "カレンダーに戻る", root_path %></p>
+<% end %>
