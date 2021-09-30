@@ -2,10 +2,7 @@ class Admin < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-<<<<<<< Updated upstream
          :recoverable, :rememberable, :validatable
-=======
-         :recoverable, :rememberable
 
   with_options presence: true do
     validates :name, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'は「ひらがな」か「カタカナ」か「漢字」で入力してください' }
