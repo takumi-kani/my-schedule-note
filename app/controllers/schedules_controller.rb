@@ -20,6 +20,19 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
   end
 
+  def edit
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def update
+    @schedule = Schedule.find(params[:id])
+    if @schedule.update(schedule_params)
+      redirect_to schedules_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def schedule_params
