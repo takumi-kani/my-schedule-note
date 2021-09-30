@@ -70,11 +70,8 @@ class Admins::RegistrationsController < Devise::RegistrationsController
       id == 'test' && password =='1111'
     end
   end
-<<<<<<< Updated upstream
-=======
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
->>>>>>> Stashed changes
 end
