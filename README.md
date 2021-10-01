@@ -22,21 +22,20 @@
 [![Image from Gyazo](https://i.gyazo.com/1c8186b1d8208c3344394cd0d315e285.png)](https://gyazo.com/1c8186b1d8208c3344394cd0d315e285)
 - 新規ユーザー登録  
 登録完了後トップページへ遷移  
-[![Image from Gyazo](https://i.gyazo.com/71c50881e6479e89f51e3821db7de133.gif)](https://gyazo.com/71c50881e6479e89f51e3821db7de133)
+[![Image from Gyazo](https://i.gyazo.com/c7d576c215bdc1aefaf97f25069dc069.gif)](https://gyazo.com/c7d576c215bdc1aefaf97f25069dc069)
 - 管理者の新規登録やログインの際のBasic認証  
-[![Image from Gyazo](https://i.gyazo.com/4435554b46efc437dbb9eab27064d02f.png)](https://gyazo.com/4435554b46efc437dbb9eab27064d02f)
+[![Image from Gyazo](https://i.gyazo.com/f927b7bc0f3e1cc4d6565e287b90eb7e.gif)](https://gyazo.com/f927b7bc0f3e1cc4d6565e287b90eb7e)
 - 予定の作成  
-[![Image from Gyazo](https://i.gyazo.com/cc1fd6bc3fb431271b58b4c8929e2dc2.gif)](https://gyazo.com/cc1fd6bc3fb431271b58b4c8929e2dc2)
+[![Image from Gyazo](https://i.gyazo.com/d3d5cd18ce40d4aa1c77bc677d4d1b84.gif)](https://gyazo.com/d3d5cd18ce40d4aa1c77bc677d4d1b84)
 - 詳細ページ  
-[![Image from Gyazo](https://i.gyazo.com/289c41a6e724f0bf11e430e82f794d49.png)](https://gyazo.com/289c41a6e724f0bf11e430e82f794d49)
-- 田中（ユーザー）視点での予定表  
-[![Image from Gyazo](https://i.gyazo.com/932aa37aa2f506896057fa6eb5d202d9.png)](https://gyazo.com/932aa37aa2f506896057fa6eb5d202d9)
-- 鈴木（ユーザー）視点での予定表  
-[![Image from Gyazo](https://i.gyazo.com/848a766549803273386fabc9c92573c2.png)](https://gyazo.com/848a766549803273386fabc9c92573c2)
-- 管理者視点での予定表  
-[![Image from Gyazo](https://i.gyazo.com/baf259d3bb77ef8e4739d426547256ac.png)](https://gyazo.com/baf259d3bb77ef8e4739d426547256ac)
-- コメント欄  
-[![Image from Gyazo](https://i.gyazo.com/e765305ed928a6b8094d850851d0cbcb.png)](https://gyazo.com/e765305ed928a6b8094d850851d0cbcb)
+[![Image from Gyazo](https://i.gyazo.com/051ed79213bd434bed23060e98a4c804.png)](https://gyazo.com/051ed79213bd434bed23060e98a4c804)
+- 田中視点での予定表（塾の予定のみ作成）  
+[![Image from Gyazo](https://i.gyazo.com/f0ded755ae5179b3df91e75d09dd3d05.png)](https://gyazo.com/f0ded755ae5179b3df91e75d09dd3d05)
+- 鈴木視点での予定表（野球の予定のみ作成）  
+[![Image from Gyazo](https://i.gyazo.com/70ec837ec1893cf5bfe7cb2a4b542ee8.png)](https://gyazo.com/70ec837ec1893cf5bfe7cb2a4b542ee8)
+- 管理者視点での予定表（サッカーの予定のみ作成）  
+[![Image from Gyazo](https://i.gyazo.com/26afa83be2955029208e60ec539f6808.png)](https://gyazo.com/26afa83be2955029208e60ec539f6808)
+
 
 # 今後実装予定の機能
 - ビューを見やすくする（子供目線で）
